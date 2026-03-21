@@ -1,41 +1,40 @@
-import type { Metadata } from "next";
-import { Geist, Geist_Mono } from "next/font/google";
+import type { Metadata, Viewport } from "next";
+import { GeistSans } from "geist/font/sans";
+import { GeistMono } from "geist/font/mono";
 import "./globals.css";
 
-const geistSans = Geist({
-  variable: "--font-geist-sans",
-  subsets: ["latin"],
-});
-
-const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
-});
-
 export const metadata: Metadata = {
-  title: "Kioskreserve Local",
+  title: "KioskReserve Local",
   description: "Offline-first bookings and queueing for clinics and government offices.",
+  icons: { icon: "/favicon.ico" },
   openGraph: {
-    title: "Kioskreserve Local",
+    title: "KioskReserve Local",
     description: "Offline-first bookings and queueing for clinics and government offices.",
-    siteName: "Kioskreserve Local",
+    siteName: "KioskReserve Local",
     url: "https://kioskreserve-local.vercel.app",
     images: [
       {
         url: "https://kioskreserve-local.vercel.app/og-image.png",
         width: 1200,
         height: 630,
-        alt: "Kioskreserve Local – Offline-first bookings and queueing for clinics and government offices.",
+        alt: "KioskReserve Local – Offline-first bookings and queueing for clinics and government offices.",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "Kioskreserve Local",
+    title: "KioskReserve Local",
     description: "Offline-first bookings and queueing for clinics and government offices.",
     images: ["https://kioskreserve-local.vercel.app/og-image.png"],
   },
+};
+
+export const viewport: Viewport = {
+  width: "device-width",
+  initialScale: 1,
+  maximumScale: 1,
+  userScalable: false,
 };
 
 export default function RootLayout({
@@ -45,9 +44,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en" suppressHydrationWarning>
-      <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
-      >
+      <body className={`${GeistSans.variable} ${GeistMono.variable} antialiased`}>
         {children}
       </body>
     </html>
