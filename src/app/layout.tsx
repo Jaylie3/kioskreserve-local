@@ -15,6 +15,27 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Kioskreserve Local",
   description: "Offline-first bookings and queueing for clinics and government offices.",
+  openGraph: {
+    title: "Kioskreserve Local",
+    description: "Offline-first bookings and queueing for clinics and government offices.",
+    siteName: "Kioskreserve Local",
+    url: "https://kioskreserve-local.vercel.app",
+    images: [
+      {
+        url: "https://kioskreserve-local.vercel.app/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Kioskreserve Local – Offline-first bookings and queueing for clinics and government offices.",
+      },
+    ],
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Kioskreserve Local",
+    description: "Offline-first bookings and queueing for clinics and government offices.",
+    images: ["https://kioskreserve-local.vercel.app/og-image.png"],
+  },
 };
 
 export default function RootLayout({
